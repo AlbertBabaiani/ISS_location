@@ -244,7 +244,12 @@ async function get_iss(){
 
 // get_iss()
 
-setInterval(get_iss, 2000)
+setInterval(() => {
+    get_iss().catch(error => {
+        console.log(error);
+    });
+}, 2000);
+
 
 
 
