@@ -103,7 +103,7 @@ const circle = L.circle(iss_marker.getLatLng(), {
     color: 'white',
     fillColor: 'gray',
     fillOpacity: 0.3,
-    radius: 2400000  // Adjust the radius as needed
+    radius: 2400000
   }).addTo(map);
 
 
@@ -138,7 +138,7 @@ function myLocation(){
         
         if(!more_than_once){
             my_loc_marker = L.marker(e.latlng).addTo(map)
-            .bindPopup("You are within " + radius + " meters from this point").openPopup();
+            .bindPopup("You are within " + Math.round(radius) + " meters from this point").openPopup();
 
             my_loc = L.circle(e.latlng, radius).addTo(map);
             more_than_once = true;
