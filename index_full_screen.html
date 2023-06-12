@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>ISS location Full Screen</title>
+    <link rel="icon" href="iss200_xicon.png" type="image/x-icon">
+
+    <meta name="theme-color" content="#212529">
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <!-- Leaflet End -->
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- Bootstrap End -->
+</head>
+<body>
+    <div class="custom-container full-screen">
+
+        <a href="index.html" class = "frame rounded text-dark">
+            <!-- <i class="fa-solid fa-expand"></i> -->
+            <i class="fa-solid fa-minimize"></i>
+        </a>
+
+        <div class="distance_between">
+            <span id="distance"></span> kms
+        </div>
+        
+        <div id="map" class="map">
+            
+        </div>
+
+        <div class="control-panel">
+
+            <button class="hide_control_panel">
+                <i class="fa-solid fa-caret-right h_c_p"></i>
+            </button>
+    
+            <div class="control-panel-sub shadow">          
+                <button id="shrink_control_panel">
+                    <i class="fa-solid fa-grip-lines-vertical"></i>
+                    <span class="additional-text">Shrink</span>
+                </button>
+                
+                
+                <button id="focus_on_iss" onclick="change_focus()">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    <span class="additional-text">Focus from ISS</span>
+                </button>
+                
+                <button id="show_my_location" onclick="myLocation()">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span class="additional-text">Show my location</span>
+                </button>
+                
+                
+                <button id="zoom_out" onclick="zoomOut()">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <span class="additional-text">Zoom Out</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <table class="table table-hover table-striped shadow-sm" style="display: none;">
+        <tbody>
+            <tr>
+                <th colspan="2" class="text-center loc_icons">
+                    <i class="fa-solid fa-sun"></i>
+                    <span id="location_sun_moon">
+                        The ISS is in
+                    </span>
+                    <i class="fa-solid fa-moon"></i>
+                </th>
+              </tr>
+          <tr>
+            <th scope="row">Altitude</th>
+            <td><span id="altitude_id"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Longitude</th>
+            <td><span id="longitude_id"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Latitude</th>
+            <td><span id="latitude_id"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Velocity</th>
+            <td><span id="velocity_id"></span> kmh</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+</body>
+</html>

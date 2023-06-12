@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    z-index: 2;
+}
+
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar {
+width: 8px; /* width of the scrollbar */
+}
+
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+background-color: #9dbac3; /* color of the scrollbar thumb */
+border-radius: 4px; /* rounded corners of the thumb */
+}
+
+/* Customize the scrollbar track on hover */
+::-webkit-scrollbar-track:hover {
+background-color: #9dbac3; /* color of the scrollbar track on hover */
+}
+
+/* Customize the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+background-color: #9dbac3; /* color of the scrollbar thumb on hover */
+}
+
+
+
+.title{
+    font-family: 'Oswald', sans-serif;
+}
+
+.frame{
+    text-decoration: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgb(65 65 65/ 0.3);
+    font-size: 1.4rem;
+    cursor: pointer;
+    opacity: 0.4;
+
+    width: 3rem;
+    aspect-ratio: 1;
+
+    z-index: 100000;
+
+    transition: opacity 0.3s;
+
+    &:hover{
+        opacity: 1;
+    }
+
+    & > *{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+.custom-container{
+    height: 34rem !important;
+    position: relative;
+    overflow: hidden;
+
+    z-index: 300000;
+
+    &.full-screen{
+        width: 100% !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+    }
+}
+
+.map{
+    height: 100%;
+    z-index: 1;
+
+    transition: all 0.3s;
+
+    overflow: hidden;
+}
+
+
+
+.control-panel{
+    z-index: 20;
+    position: absolute;
+    bottom: 0.8rem;
+    left: 0.8rem;
+
+    
+    &-sub{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        width: 3rem;
+        background: red;
+        overflow: hidden;
+        border-radius: 1rem;
+        
+        background: rgb(215, 215, 215);
+        
+        transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+        
+        &.expanded-panel{
+            width: 17.3rem;
+        }
+
+        &.hidden-panel{
+            transform: translateX(-4rem);
+        }
+    }
+
+    
+    
+    
+    
+
+    button{
+        width: 17.3rem;
+        background: rgb(215, 215, 215);
+        display: flex;
+        position: relative;
+        font-size: 1.5rem;
+        padding-block: 0.5rem;
+        align-items: center;
+
+        border: none;
+        cursor: pointer;
+
+        transition: background 0.3s ease;
+
+        // &:hover,
+        // &:focus{
+        //     background: rgb(192, 191, 191);
+        // }
+
+        i{
+            display: block;
+            width: 3rem;
+        }
+    }
+
+
+    .hide_control_panel{
+        position: absolute;
+        bottom: 104%;
+        left: 0;
+        border-radius: 1rem;
+        overflow: hidden;
+        width: 3rem !important;
+
+        i{
+            transition: transform 0.3s;
+        }
+    }
+
+    .additional-text{
+        display: block;
+        font-size: 0.9em;
+        font-family: 'Poppins', sans-serif;
+        white-space: nowrap;
+
+        font-weight: 400;
+    }
+
+}
+
+
+
+.loc_icons{
+    transition: background 0.3s;
+    & > i{
+        margin-inline: 6px;
+        display: none;
+        transition: color 0.3s;
+    }
+
+    &.day{
+        & > i:first-child{
+            display: inline-block;
+        }
+        background: #f7c631;
+        color: azure;
+    }
+
+    &.night{
+        & > i:last-child{
+            display: inline-block;
+        }
+        background: #3e66a2;
+        color: azure;
+    }
+}
+
+
+.distance_between{
+    background: rgb(215 215 215/ 1);
+    border: 2px solid rgba(gray, 0.6);
+    border-radius: 100vmax;
+    position: absolute;
+    bottom: 2rem;
+    right: 0.8rem;
+    width: 13rem;
+    
+    padding-block: 0.3rem;
+
+    display: none;
+
+    z-index: 4000;
+
+    text-align: center;
+    color: azure;
+}
