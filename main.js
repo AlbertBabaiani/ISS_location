@@ -7,6 +7,7 @@ const velocity_id = document.getElementById('velocity_id');
 const distance_between = document.querySelector('.distance_between');
 const distance = document.getElementById('distance');
 
+const error_message = document.querySelector('.error-message');
 
 let my_location_allowed = false;
 let more_than_once = false;
@@ -238,7 +239,9 @@ async function get_iss(){
         let distancee = iss_marker.getLatLng().distanceTo(my_loc.getLatLng());
 
         distance.textContent = Math.round(distancee / 1000).toLocaleString();
-    } 
+    }
+
+    error_message.style.display = 'none';
 
 }
 
@@ -247,6 +250,7 @@ async function get_iss(){
 setInterval(() => {
     get_iss().catch(error => {
         console.log(error);
+        error_message.style.display = 'block';
     });
 }, 2000);
 

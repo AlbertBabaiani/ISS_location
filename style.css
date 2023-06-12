@@ -28,6 +28,15 @@
   background-color: #9dbac3; /* color of the scrollbar thumb on hover */
 }
 
+.error-message {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100000000;
+  display: block;
+}
+
 .title {
   font-family: "Oswald", sans-serif;
 }
