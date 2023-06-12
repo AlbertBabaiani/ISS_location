@@ -252,7 +252,7 @@ setInterval(() => {
         console.log(error);
         error_message.style.display = 'block';
     });
-}, 2000);
+}, 1400);
 
 
 
