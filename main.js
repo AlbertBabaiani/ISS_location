@@ -277,7 +277,7 @@ function show_info(arr){
     altitude_id.textContent = arr.altitude;
     longitude_id.textContent = arr.longitude;
     latitude_id.textContent = arr.latitude;
-    velocity_id.textContent = Math.toFixed(arr.velocity, 2);
+    velocity_id.textContent = Math.round(arr.velocity);
 
     if(arr.visibility === 'daylight'){
         location_sun_moon.textContent = 'The ISS is in daylight';
